@@ -1,8 +1,19 @@
 from django.shortcuts import render
+posts = [
+    {
+        'name': 'Dev'
+    },
+    {
+        'name': 'Gouri'
+    }
+]
 
 
 def home(request):
-    return render(request, 'blog/home.html')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/home.html', context)
 
 
 def about(request):
